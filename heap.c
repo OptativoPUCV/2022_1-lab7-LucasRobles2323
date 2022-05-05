@@ -46,8 +46,10 @@ void heap_push(Heap* pq, void* data, int priority){
    while(pq->heapArray[dadIndex].priority < pq->heapArray[index].priority ){
       printf("\n\n Entro \n\n");
       aux = pq->heapArray[dadIndex];
-      pq->heapArray[dadIndex] = pq->heapArray[index];
-      pq->heapArray[index] = aux;
+      pq->heapArray[dadIndex].priority = pq->heapArray[index].priority;
+      pq->heapArray[dadIndex].data = pq->heapArray[index].data;
+      pq->heapArray[index].data = aux.data;
+      pq->heapArray[index].priority = aux.priority;
    }
 
 }
