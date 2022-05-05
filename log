@@ -104,3 +104,13 @@ heap.c:22:44: error: expected ';' before '}' token
                                             ^
 Compilation failed
 948bb6e
+Thu May  5 11:18:48 HSP 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+heap.c: In function 'heap_top':
+heap.c:22:81: error: expected ';' before '}' token
+    if(pq->heapArray[0].priority == 0 || pq->heapArray->data == NULL){return NULL};
+                                                                                 ^
+Compilation failed
+1c5e933
