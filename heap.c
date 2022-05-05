@@ -3,6 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
+#include <assert.h>
 #include "heap.h"
 
 typedef struct nodo{
@@ -33,6 +34,10 @@ void heap_pop(Heap* pq){
 }
 
 Heap* createHeap(){
-
-   return NULL;
+   Heap *dinamic = (Heap*) malloc (sizeof(Heap));
+   assert(dinamic);
+   dinamic->heapArray = (heapElem*) calloc (3, sizeof(heapElem));
+   dinamic->capac = 3;
+   dinamic->size = 0;
+   return dinamic;
 }
