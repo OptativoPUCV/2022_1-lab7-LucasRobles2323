@@ -48,7 +48,7 @@ void heap_push(Heap* pq, void* data, int priority){
          pq->heapArray[i].data = data;
          pq->heapArray[i].priority = priority;
          index = i;
-         printf("%d  ", pq->heapArray[i].priority);
+         printf("%d  %d", pq->heapArray[i].priority, index);
          break;
       }
    }
