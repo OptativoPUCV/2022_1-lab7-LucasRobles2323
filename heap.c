@@ -51,13 +51,17 @@ void heap_push(Heap* pq, void* data, int priority){
 
    int dadIndex = (int) (index - 1)/2;
    heapElem aux;
-   while(pq->heapArray[dadIndex].priority < pq->heapArray[index].priority ){
-      aux = pq->heapArray[dadIndex];
-      pq->heapArray[dadIndex] = pq->heapArray[index];
-      pq->heapArray[index] = aux;
+   while (pq->heapArray[dadIndex].priority < pq->heapArray[index].priority)
+   {
+      while(pq->heapArray[dadIndex].priority < pq->heapArray[index].priority){
+         aux = pq->heapArray[dadIndex];
+         pq->heapArray[dadIndex] = pq->heapArray[index];
+         pq->heapArray[index] = aux;
+      }
+      index = pq->size - 1;
+      dadIndex =(int) (index - 1)/2;
    }
    pq->size += 1;
-
 }
 
 
