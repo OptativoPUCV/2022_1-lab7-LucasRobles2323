@@ -310,3 +310,14 @@ Thu May  5 11:42:12 HSP 2022:
  tests:  2|2
 total_score: 20/70
 08a7215
+Thu May  5 11:43:28 HSP 2022: 
+ heap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:0:
+heap.c: In function 'heap_push':
+heap.c:39:10: error: implicit declaration of function 'prinf' [-Werror=implicit-function-declaration]
+          prinf("\n\n i = %d  p = %d\n\n", i, priority);
+          ^~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+62720e8
