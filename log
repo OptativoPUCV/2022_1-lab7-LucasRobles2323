@@ -286,3 +286,9 @@ test.c:258:23: error: '*h->heapArray' is a pointer; did you mean to use '->'?
 cc1.exe: all warnings being treated as errors
 Compilation failed
 84b3c84
+Thu May  5 11:38:12 HSP 2022: 
+ heap.c | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)
+ tests:  2|2
+total_score: 20/70
+97d01e1
