@@ -50,15 +50,11 @@ void heap_push(Heap* pq, void* data, int priority){
    }
 
    int dadIndex = (int) (index - 1)/2;
-   printf("\n dad = %d \n", dadIndex);
    heapElem aux;
    while(pq->heapArray[dadIndex].priority < pq->heapArray[index].priority ){
-      aux.priority = pq->heapArray[dadIndex].priority;
-      aux.data = pq->heapArray[dadIndex].data;
-      pq->heapArray[dadIndex].priority = pq->heapArray[index].priority;
-      pq->heapArray[dadIndex].data = pq->heapArray[index].data;
-      pq->heapArray[index].data = aux.data;
-      pq->heapArray[index].priority = aux.priority;
+      aux = pq->heapArray[dadIndex];
+      pq->heapArray[dadIndex] = pq->heapArray[index];
+      pq->heapArray[index] = aux;
    }
    pq->size += 1;
 
