@@ -158,3 +158,131 @@ heap.c:46:11: error: incompatible types when assigning to type 'heapElem * {aka 
            ^
 Compilation failed
 303196f
+Thu May  5 11:37:17 HSP 2022: 
+ heap.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+In file included from test.c:4:0:
+heap.c: In function 'heap_push':
+heap.c:32:21: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+       pq->heapArray = (heapElem*) realloc (pq->heapArray, sizeof(heapElem) * pq->size);
+                     ^
+test.c: In function 'view_array':
+test.c:59:37: error: '*(h->heapArray + (sizetype)((unsigned int)i * 4u))' is a pointer; did you mean to use '->'?
+         printf("%d ",h->heapArray[i].priority);
+                                     ^
+                                     ->
+test.c: In function 'initialize_heap':
+test.c:67:21: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+     heap->heapArray = (heapElem*) calloc (7,sizeof(heapElem));
+                     ^
+test.c:69:23: error: '*heap->heapArray' is a pointer; did you mean to use '->'?
+     heap->heapArray[0].priority=11;
+                       ^
+                       ->
+test.c:70:23: error: '*(heap->heapArray + 4u)' is a pointer; did you mean to use '->'?
+     heap->heapArray[1].priority=5;
+                       ^
+                       ->
+test.c:71:23: error: '*(heap->heapArray + 8u)' is a pointer; did you mean to use '->'?
+     heap->heapArray[2].priority=8;
+                       ^
+                       ->
+test.c:72:23: error: '*(heap->heapArray + 12u)' is a pointer; did you mean to use '->'?
+     heap->heapArray[3].priority=3;
+                       ^
+                       ->
+test.c:73:23: error: '*(heap->heapArray + 16u)' is a pointer; did you mean to use '->'?
+     heap->heapArray[4].priority=4;
+                       ^
+                       ->
+test.c:75:40: error: '*(heap->heapArray + (sizetype)((unsigned int)i * 4u))' is a pointer; did you mean to use '->'?
+     for(i=0;i<4;i++) heap->heapArray[i].data = &heap->heapArray[i].priority;
+                                        ^
+                                        ->
+test.c:75:67: error: '*(heap->heapArray + (sizetype)((unsigned int)i * 4u))' is a pointer; did you mean to use '->'?
+     for(i=0;i<4;i++) heap->heapArray[i].data = &heap->heapArray[i].priority;
+                                                                   ^
+                                                                   ->
+test.c: In function 'test_create':
+test.c:103:24: error: '*(h->heapArray + (sizetype)((unsigned int)i * 4u))' is a pointer; did you mean to use '->'?
+         h->heapArray[i].priority=1;
+                        ^
+                        ->
+test.c:104:24: error: '*(h->heapArray + (sizetype)((unsigned int)i * 4u))' is a pointer; did you mean to use '->'?
+         h->heapArray[i].data=NULL;
+                        ^
+                        ->
+test.c: In function 'test_top':
+test.c:119:39: error: '*h->heapArray' is a pointer; did you mean to use '->'?
+     if (heap_top(h) != h->heapArray[0].data){
+                                       ^
+                                       ->
+test.c:125:20: error: '*h->heapArray' is a pointer; did you mean to use '->'?
+     h->heapArray[0].data=NULL;
+                    ^
+                    ->
+test.c: In function 'test_push':
+test.c:152:23: error: '*(h->heapArray + 20u)' is a pointer; did you mean to use '->'?
+     if(h->heapArray[5].priority!=7){
+                       ^
+                       ->
+test.c:157:39: error: '*(h->heapArray + 20u)' is a pointer; did you mean to use '->'?
+     if( strcmp((char*) h->heapArray[5].data, "push_data")!=0 ){
+                                       ^
+                                       ->
+test.c:175:23: error: '*(h->heapArray + 8u)' is a pointer; did you mean to use '->'?
+     if(h->heapArray[2].priority!=10 || h->heapArray[5].priority!=8){
+                       ^
+                       ->
+test.c:175:55: error: '*(h->heapArray + 20u)' is a pointer; did you mean to use '->'?
+     if(h->heapArray[2].priority!=10 || h->heapArray[5].priority!=8){
+                                                       ^
+                                                       ->
+test.c:187:23: error: '*h->heapArray' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=15 || h->heapArray[2].priority!=11 || h->heapArray[5].priority!=8){
+                       ^
+                       ->
+test.c:187:55: error: '*(h->heapArray + 8u)' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=15 || h->heapArray[2].priority!=11 || h->heapArray[5].priority!=8){
+                                                       ^
+                                                       ->
+test.c:187:87: error: '*(h->heapArray + 20u)' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=15 || h->heapArray[2].priority!=11 || h->heapArray[5].priority!=8){
+                                                                                       ^
+                                                                                       ->
+test.c:207:23: error: '*h->heapArray' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=20 || h->heapArray[1].priority!=15 || h->heapArray[3].priority!=5 || h->heapArray[7].priority!=3){
+                       ^
+                       ->
+test.c:207:55: error: '*(h->heapArray + 4u)' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=20 || h->heapArray[1].priority!=15 || h->heapArray[3].priority!=5 || h->heapArray[7].priority!=3){
+                                                       ^
+                                                       ->
+test.c:207:87: error: '*(h->heapArray + 12u)' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=20 || h->heapArray[1].priority!=15 || h->heapArray[3].priority!=5 || h->heapArray[7].priority!=3){
+                                                                                       ^
+                                                                                       ->
+test.c:207:118: error: '*(h->heapArray + 28u)' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=20 || h->heapArray[1].priority!=15 || h->heapArray[3].priority!=5 || h->heapArray[7].priority!=3){
+                                                                                                                      ^
+                                                                                                                      ->
+test.c: In function 'test_pop':
+test.c:228:23: error: '*h->heapArray' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=8){
+                       ^
+                       ->
+test.c:241:23: error: '*h->heapArray' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=5){
+                       ^
+                       ->
+test.c:250:23: error: '*h->heapArray' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=4){
+                       ^
+                       ->
+test.c:258:23: error: '*h->heapArray' is a pointer; did you mean to use '->'?
+     if(h->heapArray[0].priority!=3){
+                       ^
+                       ->
+cc1.exe: all warnings being treated as errors
+Compilation failed
+84b3c84
