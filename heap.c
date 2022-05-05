@@ -43,7 +43,7 @@ void heap_push(Heap* pq, void* data, int priority){
    int dadIndex = (index - 1)/2;
    heapElem *aux = NULL;
    while(pq->heapArray[dadIndex].priority < pq->heapArray[index].priority ){
-      *aux = pq->heapArray[dadIndex];
+      aux = pq->heapArray[dadIndex];
       pq->heapArray[dadIndex] = pq->heapArray[index];
       pq->heapArray[index] = *aux;
    }
@@ -57,7 +57,6 @@ void heap_pop(Heap* pq){
 
 Heap* createHeap(){
    Heap *dinamic = (Heap*) malloc (sizeof(Heap));
-   assert(dinamic);
    dinamic->heapArray = (heapElem*) calloc (3, sizeof(heapElem));
    dinamic->capac = 3;
    dinamic->size = 0;

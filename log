@@ -148,3 +148,13 @@ Thu May  5 11:35:41 HSP 2022:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 8129684
+Thu May  5 11:36:08 HSP 2022: 
+ heap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:0:
+heap.c: In function 'heap_push':
+heap.c:46:11: error: incompatible types when assigning to type 'heapElem * {aka struct nodo *}' from type 'heapElem {aka struct nodo}'
+       aux = pq->heapArray[dadIndex];
+           ^
+Compilation failed
+303196f
