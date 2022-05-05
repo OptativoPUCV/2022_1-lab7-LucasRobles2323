@@ -66,3 +66,17 @@ heap.c:22:4: error: used struct type value where scalar is required
     ^
 Compilation failed
 7b44086
+Thu May  5 11:17:34 HSP 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from heap.c:6:0,
+                 from test.c:4:
+heap.c: In function 'heap_top':
+heap.c:22:4: error: expected ']' before ')' token
+    assert(pq->heapArray[0 != NULL);
+    ^
+heap.c:22:4: error: used struct type value where scalar is required
+    assert(pq->heapArray[0 != NULL);
+    ^
+Compilation failed
+9afc634
