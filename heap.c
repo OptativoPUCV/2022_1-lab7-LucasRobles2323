@@ -20,7 +20,7 @@ typedef struct Heap{
 
 void* heap_top(Heap* pq){
    assert(pq->heapArray[0].priority);
-   return pq->heapArray[0]->data;
+   return pq->heapArray[0].data;
 }
 
 

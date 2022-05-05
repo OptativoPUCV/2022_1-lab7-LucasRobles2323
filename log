@@ -37,3 +37,9 @@ heap.c:24:1: error: control reaches end of non-void function [-Werror=return-typ
 cc1.exe: all warnings being treated as errors
 Compilation failed
 e763e2f
+Thu May  5 11:15:28 HSP 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|3
+total_score: 10/70
+669694d
