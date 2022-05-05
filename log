@@ -132,3 +132,14 @@ Thu May  5 11:20:54 HSP 2022:
  tests:  2|2
 total_score: 20/70
 4963639
+Thu May  5 11:34:24 HSP 2022: 
+ heap.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+In file included from test.c:4:0:
+heap.c: In function 'heap_push':
+heap.c:37:36: error: comparison between pointer and integer [-Werror]
+       if(pq->heapArray[i].priority == NULL){
+                                    ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+3be0960
