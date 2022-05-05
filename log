@@ -55,3 +55,14 @@ Thu May  5 11:16:27 HSP 2022:
  tests:  1|3
 total_score: 10/70
 d3d86ad
+Thu May  5 11:17:14 HSP 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from heap.c:6:0,
+                 from test.c:4:
+heap.c: In function 'heap_top':
+heap.c:22:4: error: used struct type value where scalar is required
+    assert(pq->heapArray[0]);
+    ^
+Compilation failed
+7b44086
