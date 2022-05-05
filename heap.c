@@ -31,7 +31,8 @@ void heap_push(Heap* pq, void* data, int priority){
       pq->size += 1;
       pq->heapArray = (heapElem*) realloc (pq->heapArray, sizeof(heapElem) * pq->size);
    }
-   int index = -1;
+   int index;
+
    for (size_t i = 0; i < pq->size; i++)
    {
       if(pq->heapArray[i].data == NULL){
@@ -43,6 +44,7 @@ void heap_push(Heap* pq, void* data, int priority){
    int dadIndex = (index - 1)/2;
    heapElem aux;
    while(pq->heapArray[dadIndex].priority < pq->heapArray[index].priority ){
+      printf("\n\n Entro \n\n");
       aux = pq->heapArray[dadIndex];
       pq->heapArray[dadIndex] = pq->heapArray[index];
       pq->heapArray[index] = aux;
