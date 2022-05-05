@@ -321,3 +321,9 @@ heap.c:39:10: error: implicit declaration of function 'prinf' [-Werror=implicit-
 cc1.exe: all warnings being treated as errors
 Compilation failed
 62720e8
+Thu May  5 11:43:43 HSP 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|2
+total_score: 20/70
+a608b82
