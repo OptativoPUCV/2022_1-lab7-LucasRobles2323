@@ -56,6 +56,8 @@ void heap_push(Heap* pq, void* data, int priority){
       aux = pq->heapArray[dadIndex];
       pq->heapArray[dadIndex] = pq->heapArray[index];
       pq->heapArray[index] = aux;
+      index = dadIndex;
+      dadIndex = (int) (index - 1)/2;
    }
    pq->size += 1;
 }
