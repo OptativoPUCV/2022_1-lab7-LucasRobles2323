@@ -126,3 +126,9 @@ Thu May  5 11:20:09 HSP 2022:
  tests:  1|0
    [ INFO ] seteando size en 0
 02f9822
+Thu May  5 11:20:54 HSP 2022: 
+ heap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+ tests:  2|2
+total_score: 20/70
+4963639
