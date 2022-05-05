@@ -51,6 +51,7 @@ void heap_push(Heap* pq, void* data, int priority){
       pq->heapArray[index].data = aux.data;
       pq->heapArray[index].priority = aux.priority;
    }
+   pq->size += 1;
 
 }
 
