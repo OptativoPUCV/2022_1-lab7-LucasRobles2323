@@ -58,13 +58,6 @@ void heap_push(Heap* pq, void* data, int priority){
       pq->heapArray[index] = aux;
    }
    pq->size += 1;
-   printf("\n");
-   for (size_t i = 0; i < pq->capac; i++)
-   {
-      printf("%5d", pq->heapArray[i].priority);
-   }
-   printf("\n");
-
 }
 
 
