@@ -77,12 +77,6 @@ void heap_pop(Heap* pq){
    pq->heapArray[0] = pq->heapArray[pq->size - 1];
    pq->heapArray[pq->size - 1] = aux;
    pq->size--;
-   printf("%d \n", pq->size);
-   for (size_t i = 0; i < pq->capac; i++)
-   {
-      printf("%d ", pq->heapArray[i].priority);
-   }
-   printf("\n");
 
    int actual = 0;
    int sonDer;
@@ -109,13 +103,15 @@ void heap_pop(Heap* pq){
       }
       
       if(pq->heapArray[sonCambiar].priority == 0 || 
-         pq->heapArray[sonCambiar].priority < pq->heapArray[actual].priority){return;}
+         pq->heapArray[sonCambiar].priority < pq->heapArray[actual].priority)
+      {return;}
       aux = pq->heapArray[actual];
       pq->heapArray[actual] = pq->heapArray[sonCambiar];
       pq->heapArray[sonCambiar] = aux;
       actual = sonCambiar;
    }
 }
+
 
 Heap* createHeap(){
    Heap *dinamic = (Heap*) malloc (sizeof(Heap));
