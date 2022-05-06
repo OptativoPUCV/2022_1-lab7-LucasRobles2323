@@ -538,3 +538,9 @@ heap.c:33:7: error: 'ponerZeros' undeclared (first use in this function)
 heap.c:33:7: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 17a1ae7
+Fri May  6 18:44:26 HSP 2022: 
+ heap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  7|1
+total_score: 45/70
+ac46a54
