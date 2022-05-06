@@ -68,7 +68,7 @@ void heap_push(Heap* pq, void* data, int priority){
 }
 
 
-void heap_pop(Heap* pq){
+/*void heap_pop(Heap* pq){
    if(pq->size == 0){return;}
    pq->heapArray[0].priority = 0;
    
@@ -110,6 +110,55 @@ void heap_pop(Heap* pq){
       pq->heapArray[sonCambiar] = aux;
       actual = sonCambiar;
    }
+}*/
+
+void heap_pop(Heap* pq){
+   for(int cont = 0; cont<pq->size;cont++){
+      printf("%d ", (int)pq->heapArray[cont].priority);
+   }
+   heapElem* elemAux = (heapElem*)malloc(sizeof(heapElem));
+
+   pq->heapArray[0] = pq->heapArray[pq->size-1];
+   pq->heapArray[pq->size - 1 ].priority = 0;
+   pq->size--;
+   printf("Nuevo mayor prioridad: %d\n", (int)pq->heapArray[0].priority);
+
+   int posSup = 0;
+   int posInfIzq = (2*posSup)+1;
+   int posInfDer = (2*posSup)+2; 
+
+   while(posSup < pq->size){
+      if(pq->heapArray[posSup].priority <= pq->heapArray[posInfIzq].priority && pq->heapArray[posInfIzq].priority > pq->heapArray[posInfDer].priority){
+         *elemAux = pq->heapArray[posSup];
+         pq->heapArray[posSup] = pq->heapArray[posInfIzq];
+         pq->heapArray[posInfIzq] = *elemAux;
+
+         posSup = posInfIzq;
+         posInfIzq = (2*posSup)+1;
+         posInfDer = (2*posSup)+2; 
+         continue;
+
+      }else if(pq->heapArray[posSup].priority <= pq->heapArray[posInfDer].priority){
+         *elemAux = pq->heapArray[posSup];
+         pq->heapArray[posSup] = pq->heapArray[posInfDer];
+         pq->heapArray[posInfDer] = *elemAux;
+
+         posSup = posInfDer;
+         posInfIzq = (2*posSup)+1;
+         posInfDer = (2*posSup)+2; 
+         continue;
+      } else break;
+
+
+   }
+   
+   printf("[ ");
+   for(int i = 0; i<pq->size;i++){
+      printf("%d ", (int)pq->heapArray[i].priority);
+   }
+   printf("]\n");
+   printf("size = %d, top = %d\n", (int)pq->size, (int)pq->heapArray[0].priority);
+
 }
 
 
