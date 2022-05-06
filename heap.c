@@ -27,19 +27,19 @@ void* heap_top(Heap* pq){
 
 void heap_push(Heap* pq, void* data, int priority){
    if(pq->size == pq->capac){
-      printf("%d", pq->capac);
       pq->capac = 2 * pq->capac;
       pq->capac += 1;
-      printf("%d", pq->capac);
       pq->heapArray = (heapElem*) realloc (pq->heapArray, pq->capac * sizeof(heapElem));
    }
-
+   printf("\n");
    for (size_t i = 0; i < pq->capac; i++)
    {
+      printf("%d ", pq->heapArray[i].priority);
       if(pq->heapArray[i].priority == priority){
          return;
       }
    }
+   printf("\n");
 
    int index;
    for (size_t i = 0; i < pq->capac; i++)
