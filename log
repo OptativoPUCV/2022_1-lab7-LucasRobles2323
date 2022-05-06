@@ -643,3 +643,14 @@ Fri May  6 19:32:47 HSP 2022:
  tests:  7|1
 total_score: 65/70
 b4f2317
+Fri May  6 19:34:27 HSP 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+heap.c: In function 'heap_pop':
+heap.c:81:4: error: implicit declaration of function 'ptintf' [-Werror=implicit-function-declaration]
+    ptintf("%d \n", pq->size);
+    ^~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+bf7e6b4

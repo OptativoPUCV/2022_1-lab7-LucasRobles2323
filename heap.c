@@ -78,6 +78,7 @@ void heap_pop(Heap* pq){
    pq->heapArray[0] = pq->heapArray[pq->size - 1];
    pq->heapArray[pq->size - 1] = aux;
    pq->size--;
+   ptintf("%d \n", pq->size);
 
    int actual = 0;
    int sonDer;
@@ -91,7 +92,6 @@ void heap_pop(Heap* pq){
 
       if(sonDer >= pq->size && sonIzq >= pq->size){return;}
       else if(sonDer >= pq->size || sonIzq >= pq->size){
-         printf("Entro");
          if (sonDer >= pq->size)
          {
             sonCambiar = sonIzq;
