@@ -34,7 +34,6 @@ void heap_push(Heap* pq, void* data, int priority){
       {
          pq->heapArray[i].priority = 0;
       }
-      
    }
    
    for (size_t i = 0; i < pq->capac; i++)
@@ -70,7 +69,30 @@ void heap_push(Heap* pq, void* data, int priority){
 
 
 void heap_pop(Heap* pq){
+   if(pq->size == 0){return;}
+   pq->heapArray[0].priority = 0;
+   if(pq->size == 1){return;}
+   heapElem aux;
+   aux = pq->heapArray[0];
+   pq->heapArray[0] = pq->heapArray[pq->size - 1];
+   pq->heapArray[pq->size - 1] = aux;
+   int actual = 0;
+   int sonDer;
+   int sonIzq;
+   int sonCambiar;
 
+   while (1)
+   {
+      sonDer = (2 * actual) + 2;
+      sonIzq = (2 * actual) + 1;
+      if (pq->heapArray[sonDer].priority < pq->heapArray[sonIzq].priority){sonCambiar = sonIzq;}
+      else{sonCambiar = sonIzq;}
+      if(pq->heapArray[sonCambiar].priority = 0){return;}
+      aux = pq->heapArray[actual];
+      pq->heapArray[actual] = pq->heapArray[sonCambiar];
+      pq->heapArray[sonCambiar] = aux;
+      actual = sonCambiar;
+   };
 }
 
 Heap* createHeap(){
