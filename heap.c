@@ -84,7 +84,7 @@ void heap_pop(Heap* pq){
    int sonIzq;
    int sonCambiar;
 
-   while (actual < pq->capac)
+   while (actual < pq->size)
    {
       sonDer = (2 * actual) + 2;
       sonIzq = (2 * actual) + 1;
@@ -100,9 +100,7 @@ void heap_pop(Heap* pq){
       else{
          if (pq->heapArray[sonDer].priority < pq->heapArray[sonIzq].priority)
          {sonCambiar = sonIzq;}
-         else if (pq->heapArray[sonDer].priority > pq->heapArray[sonIzq].priority)
-         {sonCambiar = sonDer;}
-         else{return;}
+         else{sonCambiar = sonDer;}
       }
       
       if(pq->heapArray[sonCambiar].priority == 0){return;}
