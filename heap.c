@@ -81,13 +81,23 @@ void heap_pop(Heap* pq){
    int sonIzq;
    int sonCambiar;
 
-   while (actual < pq->capac - 1)
+   while (actual < pq->capac)
    {
       sonDer = (2 * actual) + 2;
       sonIzq = (2 * actual) + 1;
-      
-      if (pq->heapArray[sonDer].priority < pq->heapArray[sonIzq].priority){sonCambiar = sonIzq;}
-      else{sonCambiar = sonIzq;}
+
+      if(sonDer >= pq->capac && sonIzq >= pq->capac){return;}
+      else if(sonDer >= pq->capac || sonIzq >= pq->capac){
+         if (sonDer >= pq->capac)
+         {
+            sonCambiar = sonIzq;
+         }
+         else{ sonCambiar = sonDer;}
+      }
+      else{
+         if (pq->heapArray[sonDer].priority < pq->heapArray[sonIzq].priority){sonCambiar = sonIzq;}
+         else{sonCambiar = sonIzq;}
+      }
       
       if(pq->heapArray[sonCambiar].priority == 0){return;}
       
