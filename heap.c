@@ -78,7 +78,7 @@ void heap_pop(Heap* pq){
    pq->heapArray[0] = pq->heapArray[pq->size - 1];
    pq->heapArray[pq->size - 1] = aux;
    pq->size--;
-   ptintf("%d \n", pq->size);
+   printf("%d \n", pq->size);
 
    int actual = 0;
    int sonDer;
