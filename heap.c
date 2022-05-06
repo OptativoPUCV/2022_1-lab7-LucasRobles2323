@@ -72,10 +72,13 @@ void heap_pop(Heap* pq){
    if(pq->size == 0){return;}
    pq->heapArray[0].priority = 0;
    if(pq->size == 1){return;}
+   
    heapElem aux;
    aux = pq->heapArray[0];
    pq->heapArray[0] = pq->heapArray[pq->size - 1];
    pq->heapArray[pq->size - 1] = aux;
+   pq->size--;
+
    int actual = 0;
    int sonDer;
    int sonIzq;
