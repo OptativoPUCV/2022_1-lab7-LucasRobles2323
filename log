@@ -497,3 +497,17 @@ Fri May  6 18:38:18 HSP 2022:
  tests:  6|2
 total_score: 35/70
 530774d
+Fri May  6 18:41:57 HSP 2022: 
+ heap.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+heap.c: In function 'heap_push':
+heap.c:40:36: error: statement with no effect [-Werror=unused-value]
+          pq->heapArray[i].priority == 0;
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+heap.c:41:32: error: statement with no effect [-Werror=unused-value]
+          pq->heapArray[i].data == NULL;
+                                ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+7b0ca49
