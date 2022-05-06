@@ -555,3 +555,14 @@ heap.c:90:7: error: suggest parentheses around assignment used as truth value [-
 cc1.exe: all warnings being treated as errors
 Compilation failed
 a9b21db
+Fri May  6 19:11:38 HSP 2022: 
+ heap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+heap.c: In function 'heap_pop':
+heap.c:91:7: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+       if(pq->heapArray[sonCambiar].priority = 0){return;}
+       ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+d17df6f

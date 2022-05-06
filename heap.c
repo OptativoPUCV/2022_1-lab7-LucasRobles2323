@@ -87,12 +87,13 @@ void heap_pop(Heap* pq){
       sonIzq = (2 * actual) + 1;
       if (pq->heapArray[sonDer].priority < pq->heapArray[sonIzq].priority){sonCambiar = sonIzq;}
       else{sonCambiar = sonIzq;}
+      if(sonCambiar >= pq->capac){return;}
       if(pq->heapArray[sonCambiar].priority = 0){return;}
       aux = pq->heapArray[actual];
       pq->heapArray[actual] = pq->heapArray[sonCambiar];
       pq->heapArray[sonCambiar] = aux;
       actual = sonCambiar;
-   };
+   }
 }
 
 Heap* createHeap(){
