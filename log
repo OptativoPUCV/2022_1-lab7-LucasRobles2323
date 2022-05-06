@@ -473,3 +473,9 @@ Thu May  5 12:15:52 HSP 2022:
  tests:  6|2
 total_score: 35/70
 8bf7050
+Fri May  6 18:31:30 HSP 2022: 
+ heap.c | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+ tests:  6|2
+total_score: 35/70
+11af303

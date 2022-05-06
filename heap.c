@@ -29,15 +29,7 @@ void heap_push(Heap* pq, void* data, int priority){
    if(pq->size == pq->capac){
       pq->capac = 2 * pq->size;
       pq->capac += 1;
-      heapElem *heapArray = (heapElem*) calloc (pq->capac, sizeof(heapElem));
-      for (size_t i = 0; i < pq->capac; i++)
-      {
-         if(pq->size > i){
-            heapArray->data = pq->heapArray[i].data;
-            heapArray->priority =pq->heapArray[i].priority;
-         }
-      }
-      pq->heapArray = heapArray;
+      pq->heapArray = (heapElem*) realloc (pq->heapArray, pq->capac * sizeof(heapElem));
       
    }
 
