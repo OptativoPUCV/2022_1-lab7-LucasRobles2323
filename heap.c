@@ -95,7 +95,8 @@ void heap_pop(Heap* pq){
          else{ sonCambiar = sonDer;}
       }
       else{
-         if (pq->heapArray[sonDer].priority > pq->heapArray[sonIzq].priority){sonCambiar = sonIzq;}
+         printf("\n %d < %d \n", pq->heapArray[sonDer].priority, pq->heapArray[sonIzq].priority);
+         if (pq->heapArray[sonDer].priority < pq->heapArray[sonIzq].priority){sonCambiar = sonIzq;}
          else{sonCambiar = sonIzq;}
       }
       
