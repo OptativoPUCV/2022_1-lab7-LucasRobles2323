@@ -37,8 +37,8 @@ void heap_push(Heap* pq, void* data, int priority){
    for (size_t i = 0; i < pq->capac; i++)
    {
       if(ponerZeros && i > pq->size - 1){
-         pq->heapArray[i].priority == 0;
-         pq->heapArray[i].data == NULL;
+         pq->heapArray[i].priority = 0;
+         pq->heapArray[i].data = NULL;
       }
 
       if(pq->heapArray[i].priority == priority){

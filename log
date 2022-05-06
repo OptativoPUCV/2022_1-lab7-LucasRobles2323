@@ -511,3 +511,8 @@ heap.c:41:32: error: statement with no effect [-Werror=unused-value]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 7b0ca49
+Fri May  6 18:42:11 HSP 2022: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+14d9495
