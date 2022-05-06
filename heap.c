@@ -89,9 +89,9 @@ void heap_pop(Heap* pq){
       sonDer = (2 * actual) + 2;
       sonIzq = (2 * actual) + 1;
 
-      if(sonDer >= pq->capac && sonIzq >= pq->capac){return;}
-      else if(sonDer >= pq->capac || sonIzq >= pq->capac){
-         if (sonDer >= pq->capac)
+      if(sonDer >= pq->size && sonIzq >= pq->size){return;}
+      else if(sonDer >= pq->size || sonIzq >= pq->size){
+         if (sonDer >= pq->size)
          {
             sonCambiar = sonIzq;
          }
