@@ -43,8 +43,10 @@ void heap_push(Heap* pq, void* data, int priority){
       }
    }
 
-   int index;
-   for (size_t i = 0; i < pq->capac; i++)
+   int index = pq->size - 1;
+   pq->heapArray[index].data = data;
+   pq->heapArray[index].priority = priority;
+   /*for (size_t i = 0; i < pq->capac; i++)
    {
       if(pq->heapArray[i].priority == 0){
          pq->heapArray[i].data = data;
@@ -52,7 +54,7 @@ void heap_push(Heap* pq, void* data, int priority){
          index = i;
          break;
       }
-   }
+   }*/
 
    int dadIndex = (int) (index - 1)/2;
    heapElem aux;
