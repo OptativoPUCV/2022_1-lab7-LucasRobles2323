@@ -43,7 +43,7 @@ void heap_push(Heap* pq, void* data, int priority){
       }
    }
 
-   int index = pq->size - 1;
+   int index = pq->size;
    pq->heapArray[index].data = data;
    pq->heapArray[index].priority = priority;
    /*for (size_t i = 0; i < pq->capac; i++)
